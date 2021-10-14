@@ -6,11 +6,8 @@ const srtPrice = (price: number[]) => {
   return price.sort().reverse();
 };
 
-const matchingDistWithPrice = (distance: number[], price: number[]) => {
-  var matching = [];
-  for (var key in distance) matching.push([distance[key], price[key]]);
-  return matching;
-};
+const matchingDistWithPrice = (distance: number[], price: number[]) =>
+  distance.map((i, k) => [i, price[k]]);
 
 matchingDistWithPrice(
   srtDist([3, 5, 6, 8]),

@@ -1,7 +1,9 @@
 var srtDist = function (distance) {
+    var cpDistance = distance.slice();
     return distance.sort();
 };
 var srtPrice = function (price) {
+    var cpPrice = price.slice();
     return price.sort().reverse();
 };
 var matchingDistWithPrice = function (distance, price) {

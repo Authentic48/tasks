@@ -1,24 +1,15 @@
 var splitNumIntoDigit = (input: number) => {
-  const digits: number[] = input
-    .toString()
-    .split('')
-    .map((digit) => {
-      return parseInt(digit);
-    });
-  return digits;
-};
+  var digit = input % 10;
+  var num = 0;
 
-var fingOddNumber = (digits: number[]) => {
-  const odds = digits.filter((digit) => {
-    return digit % 2 != 0;
-  });
-
-  return odds;
-};
-
-var convertArrayIntoNum = (odds: number[]) => {
-  const num = odds.join('');
+  if (input > 0) {
+    num = splitNumIntoDigit(Math.floor(input / 10));
+  }
+  if (digit % 2 != 0) {
+    return num * 10 + digit;
+  }
 
   return num;
 };
-console.log(convertArrayIntoNum(fingOddNumber(splitNumIntoDigit(12345))));
+
+console.log(splitNumIntoDigit(123654));
